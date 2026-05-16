@@ -68,7 +68,28 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Simulación envío
+try {
+
+    const response = await fetch(
+        "AQUI_TU_URL_DE_GOOGLE_SCRIPT",
+        {
+
+            method: "POST",
+
+            body: JSON.stringify({
+
+                nombre: formData.nombre,
+                apellido1: formData.apellido1,
+                apellido2: formData.apellido2,
+                email: formData.email,
+                colaboracion:
+                formData.colaboracion.value,
+                mensaje: formData.mensaje
+            })
+        }
+    );
+
+    if(response.ok){
 
         showMessage(
             "Formulario enviado correctamente.",
@@ -76,7 +97,24 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         form.reset();
+
+    } else {
+
+        showMessage(
+            "Error al enviar el formulario.",
+            "error"
+        );
     }
+
+} catch(error){
+
+    console.error(error);
+
+    showMessage(
+        "Error de conexión.",
+        "error"
+    );
+}
 
     function validateEmail(email) {
 
