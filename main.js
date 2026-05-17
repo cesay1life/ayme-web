@@ -107,6 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     method: "POST",
 
+                    mode: "no-cors",
+
                     headers: {
 
                         "Content-Type":
