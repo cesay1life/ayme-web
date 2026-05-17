@@ -99,41 +99,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
-            const response = await fetch(
+    await fetch(
 
-                "https://script.google.com/macros/s/AKfycbySQ28dhW6e3fmUxKSRqvlJy6amBvVkIf41p3pp6ay6u1NIVuPSsh7gizxUWT-4swHjSQ/exec",
+        "TU_URL",
 
-                {
+        {
 
-                    method: "POST",
+            method: "POST",
 
-                    headers: {
+            headers: {
 
-                        "Content-Type":
-                        "application/json"
-                    },
+                "Content-Type":
+                "application/json"
+            },
 
-                    body: JSON.stringify({
+            body: JSON.stringify({
 
-                        nombre:
-                        formData.nombre,
+                nombre:
+                formData.nombre,
 
-                        apellido1:
-                        formData.apellido1,
+                apellido1:
+                formData.apellido1,
 
-                        apellido2:
-                        formData.apellido2,
+                apellido2:
+                formData.apellido2,
 
-                        email:
-                        formData.email,
+                email:
+                formData.email,
 
-                        colaboracion:
-                        formData.colaboracion.value,
+                colaboracion:
+                formData.colaboracion.value,
 
-                        mensaje:
-                        formData.mensaje
-                    })
-                }
+                mensaje:
+                formData.mensaje
+            })
+        }
+    );
+
+    showMessage(
+        "Formulario enviado correctamente.",
+        "success"
+    );
+
+    form.reset();
+
+} catch (error) {
+
+    console.error(error);
+
+    showMessage(
+        "Error de conexión.",
+        "error"
+    );
+}
+            
             );
 
             if (response.ok) {
