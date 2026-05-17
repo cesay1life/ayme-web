@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     await fetch(
 
-        "TU_URL",
+        "https://script.google.com/macros/s/AKfycbySQ28dhW6e3fmUxKSRqvlJy6amBvVkIf41p3pp6ay6u1NIVuPSsh7gizxUWT-4swHjSQ/exec" ,
 
         {
 
